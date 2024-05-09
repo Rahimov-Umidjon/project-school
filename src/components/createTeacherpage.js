@@ -4,18 +4,13 @@ import {Mycontext} from "../App";
 
 
 function CreateTeacherpage(props) {
+
  
     const navigate = useNavigate();
 
     let value = useContext(Mycontext)
 
-    // function focus(e){
-        // if(e.target.value != ""){
-            // e.target.focus()
-            // document.getElementById(`${e.target.id}`).focus()
-            
-        // }
-    // }
+
 
     function addArryTeacher(){
 
