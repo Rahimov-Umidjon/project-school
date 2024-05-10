@@ -11,6 +11,7 @@ import TeacherProfile from "./components/teacherProfile";
 import EditTeacherPage from "./components/editTeacherPage";
 import StudentProfile from "./components/studentProfile";
 import EditStudentPage from "./components/editStudentPage";
+import CreateGroup from "./components/createGroup";
 
 
 export const Mycontext = createContext();
@@ -90,6 +91,7 @@ function App(props) {
                 <Route path={"/teacher"} element={<Teacher/>}/>
                 <Route path={"/create-teacher-page"} element={<CreateTeacherpage/>}/>
                 <Route path={"/create-student-page"} element={<CreateStudentpage/>}/>
+                <Route path={"/create-group-page"} element={<CreateGroup/>}/>
                 <Route path={"/teacher-profile"} element={<TeacherProfile/>}/>
                 <Route path={"/student-profile"} element={<StudentProfile/>}/>
                 <Route path={"/edit-teacher-page"} element={<EditTeacherPage/>}/>

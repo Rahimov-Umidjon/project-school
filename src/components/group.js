@@ -48,8 +48,34 @@ function Group(props) {
                 </div>
 
 
-                <div className="home-body-right">
-                    Group
+                <div className="home-body-right-group">
+                    <div className="row">
+                        <div  onClick={()=>{
+                            navigate('/create-group-page')
+                        }} className="col-6 center-div">
+                            <div className="add-group-logo center-div"><h1 >+</h1></div>
+                        </div>
+                        <div className="col-6">
+                            <div  className="group-name-edit horizontal-div">
+                                <div className="group-name">Group name</div>
+                                <button type={"button"} className={'btn btn-danger'}>Edit</button>
+                            </div>
+                            <table>
+                                <tr>
+                                    <td>subjectName</td>
+                                    <td>TeacherName</td>
+                                </tr>
+                                <tr>
+                                    <td>level :  levelCallName</td>
+                                    <td>payment :  price</td>
+                                </tr>
+                                <tr>
+                                    <td>Date :  dateStart</td>
+                                    <td>Student :  Quantity</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
