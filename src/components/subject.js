@@ -35,7 +35,7 @@ function Subject(props) {
                             <input className={'form-control'} type="text" placeholder={'price'} />
                         </Modal.Body>
                         <Modal.Footer>
-                            <Button variant="secondary" onClick={handleClose}>
+                            <Button variant="secondary" onClick={handleClose}>gi
                                 Exit
                             </Button>
                             <Button variant="primary" onClick={handleClose}>
