@@ -42,9 +42,7 @@ function App(props) {
     }
 
 
-    useEffect(() => {
 
-    } ,[]);
 
 
 
@@ -80,7 +78,9 @@ function App(props) {
             arryStudent,
             setArryStudent,
             studentProfileIndex,
-            setStudentProfileIndex
+            setStudentProfileIndex,
+            arrySubject,
+            setArrySubject
         }}>
             <Routes>
                 <Route path={"/"} element={<Home/>}/>

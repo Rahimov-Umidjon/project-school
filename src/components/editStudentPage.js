@@ -45,7 +45,7 @@ function EditStudentPage(props) {
         setStudentBeginingDate('')
 
 
-        console.log(value.arryStudent)
+        // console.log(value.arryStudent)
         navigate('/student-profile')
     }
 
