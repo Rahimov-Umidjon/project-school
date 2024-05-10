@@ -34,6 +34,7 @@ function App(props) {
 
     const [arryTeacher , setArryTeacher] = useState([])
     const [arryStudent , setArryStudent] = useState([])
+    const [arrySubject , setArrySubject] = useState([])
     const [teacherProfileIndex , setTeacherProfileIndex] = useState(1)
     const [studentProfileIndex , setStudentProfileIndex] = useState(1)
 

@@ -1,10 +1,15 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import {Mycontext} from "../App";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
 function Subject(props) {
     const navigate = useNavigate();
     let value = useContext(Mycontext)
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
 
     return (
@@ -18,6 +23,28 @@ function Subject(props) {
             </div>
 
             <div className="home-body">
+
+                <div className={'subject-modal'}>
+
+                    <Modal show={show} onHide={handleClose}>
+                        {/*<Modal.Header closeButton>*/}
+                        {/*    <Modal.Title></Modal.Title>*/}
+                        {/*</Modal.Header>*/}
+                        <Modal.Body className={'d-flex m-3 gap-3'}>
+                            <input className={'form-control'} type="text" placeholder={'subject name'} />
+                            <input className={'form-control'} type="text" placeholder={'price'} />
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={handleClose}>
+                                Exit
+                            </Button>
+                            <Button variant="primary" onClick={handleClose}>
+                                Create
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
+                </div>
+
                 <div className="home-body-left">
                     <div onClick={() => {
                         navigate('/')
@@ -59,7 +86,7 @@ function Subject(props) {
                             <tr>
                                 <th>New subject</th>
                                 <th>Price</th>
-                                <th><button type={"button"} className={'btn btn-danger'}> create</button></th>
+                                <th><button onClick={handleShow} type={"button"} className={'btn btn-danger'}> create</button></th>
                             </tr>
                             <tr>
                                 <td>SubjectName</td>
