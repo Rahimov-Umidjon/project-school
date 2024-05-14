@@ -12,6 +12,7 @@ import EditTeacherPage from "./components/editTeacherPage";
 import StudentProfile from "./components/studentProfile";
 import EditStudentPage from "./components/editStudentPage";
 import CreateGroup from "./components/createGroup";
+import EditGroup from "./components/editGroup";
 
 
 export const Mycontext = createContext();
@@ -36,11 +37,10 @@ function App(props) {
     const [arryTeacher , setArryTeacher] = useState([])
     const [arryStudent , setArryStudent] = useState([])
     const [arrySubject , setArrySubject] = useState([])
-    const [teacherProfileIndex , setTeacherProfileIndex] = useState(1)
-    const [studentProfileIndex , setStudentProfileIndex] = useState(1)
-
-    function createTeacher() {
-    }
+    const [arryGroup , setArryGroup] = useState([])
+    const [teacherProfileIndex , setTeacherProfileIndex] = useState()
+    const [studentProfileIndex , setStudentProfileIndex] = useState()
+    const [groupIndex , setGroupIndex] = useState()
 
 
 
@@ -71,7 +71,6 @@ function App(props) {
             teacherStatus,
             setTeacherGroups,
             teacherGroups,
-            createTeacher,
             arryTeacher,
             setArryTeacher,
             teacherProfileIndex,
@@ -81,7 +80,11 @@ function App(props) {
             studentProfileIndex,
             setStudentProfileIndex,
             arrySubject,
-            setArrySubject
+            setArrySubject,
+            arryGroup,
+            setArryGroup,
+            groupIndex,
+            setGroupIndex
         }}>
             <Routes>
                 <Route path={"/"} element={<Home/>}/>
@@ -96,6 +99,8 @@ function App(props) {
                 <Route path={"/student-profile"} element={<StudentProfile/>}/>
                 <Route path={"/edit-teacher-page"} element={<EditTeacherPage/>}/>
                 <Route path={"/edit-student-page"} element={<EditStudentPage/>}/>
+                <Route path={"/edit-group-page"} element={<EditGroup/>}/>
+
 
             </Routes>
         </Mycontext.Provider>

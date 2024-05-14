@@ -8,10 +8,16 @@ function Group(props) {
 
     let value = useContext(Mycontext)
 
+
+    function GroupIndex(index){
+        value.setGroupIndex(index)
+    }
+
+
     return (
         <div id={'home-container'}>
             <div className="navbars">
-                <div className="navbar-logo"><h3>dashboard</h3></div>
+                <div className="navbar-logo"><h3>Group</h3></div>
                 <div className="navbar-search ">
                     <input className={'form-control'} type="text"/>
                     <button className={'btn btn-danger'} type={"button"}>Find</button>
@@ -55,26 +61,38 @@ function Group(props) {
                         }} className="col-6 center-div">
                             <div className="add-group-logo center-div"><h1 >+</h1></div>
                         </div>
-                        <div className="col-6">
-                            <div  className="group-name-edit horizontal-div">
-                                <div className="group-name">Group name</div>
-                                <button type={"button"} className={'btn btn-danger'}>Edit</button>
-                            </div>
-                            <table>
-                                <tr>
-                                    <td>subjectName</td>
-                                    <td>TeacherName</td>
-                                </tr>
-                                <tr>
-                                    <td>level :  levelCallName</td>
-                                    <td>payment :  price</td>
-                                </tr>
-                                <tr>
-                                    <td>Date :  dateStart</td>
-                                    <td>Student :  Quantity</td>
-                                </tr>
-                            </table>
-                        </div>
+
+
+                        {
+                            value.arryGroup.map(function (value, index){
+                                return(
+                                    <div className="col-6">
+                                        <div  className="group-name-edit horizontal-div">
+                                            <div className="group-name">{value.groupName}</div>
+                                            <button onClick={()=> {
+                                                GroupIndex(index)
+                                                navigate('/edit-group-page')
+                                            }} type={"button"} className={'btn btn-danger'}>Edit</button>
+                                        </div>
+                                        <table>
+                                            <tr>
+                                                <td>{value.subjectName}</td>
+                                                <td>{value.teacherName}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>level : {value.levelStage}</td>
+                                                <td>payment : {value.price}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Date : {value.beginingDate}</td>
+                                                <td>Student :  Quantity</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                );
+                            })
+                        }
+
                     </div>
                 </div>
             </div>

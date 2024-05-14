@@ -43,7 +43,7 @@ function Subject(props) {
     return (
         <div id={'home-container'}>
             <div className="navbars">
-                <div className="navbar-logo"><h3>dashboard</h3></div>
+                <div className="navbar-logo"><h3>Subject</h3></div>
                 <div className="navbar-search ">
                     <input className={'form-control'} type="text"/>
                     <button className={'btn btn-danger'} type={"button"}>Find</button>

@@ -11,6 +11,10 @@ function EditTeacherPage(props) {
     
 
     function EditTeacher() {
+
+
+
+
         let obj = value.arryTeacher[value.teacherProfileIndex]
         obj['firstname'] =   value.teacherFirstName;
         obj['middleName'] =  value.teacherMiddleName;
