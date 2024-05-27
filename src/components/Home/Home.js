@@ -1,6 +1,4 @@
 import React from 'react';
-import {useNavigate} from "react-router-dom";
-import {Mycontext} from "../../App";
 // import Teacher from "../Teacher/teacher";
 // import Group from "../Group/group";
 // import Students from "../Student/Students";
