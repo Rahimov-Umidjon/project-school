@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {useNavigate} from "react-router-dom";
 import {Mycontext} from "../../App";
 // import Teacher from "../Teacher/teacher";
@@ -10,7 +10,7 @@ function Home(props) {
 
     const navigate = useNavigate()
 
-    let value = useContext(Mycontext)
+    // let value = useContext(Mycontext)
 
 
     // function ChengeComponent(a) {

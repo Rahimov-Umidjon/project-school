@@ -72,7 +72,7 @@ function CreateTeacherpage(props) {
                 <div className="col-4">
                     <select onChange={(e)=>{
                         value.setTeacherSciences(e.target.value)
-                    }} className={'form-control'} aria-placeholder={'ass'} >
+                    }} className={'form-control'} >
                         <option></option>
                         <option>Sciences</option>
                         <option>w</option>
