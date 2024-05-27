@@ -1,18 +1,18 @@
-import React, {createContext, useEffect, useState} from 'react';
+import React, {createContext, useState} from 'react';
 import {Routes, Route} from "react-router-dom";
-import Home from "./components/Home";
-import Students from "./components/Students";
-import Group from "./components/group";
-import Subject from "./components/subject";
-import Teacher from "./components/teacher";
-import CreateTeacherpage from "./components/createTeacherpage";
-import CreateStudentpage from './components/createStudent';
-import TeacherProfile from "./components/teacherProfile";
-import EditTeacherPage from "./components/editTeacherPage";
-import StudentProfile from "./components/studentProfile";
-import EditStudentPage from "./components/editStudentPage";
-import CreateGroup from "./components/createGroup";
-import EditGroup from "./components/editGroup";
+import Home from "./components/Home/Home";
+import Students from "./components/Student/Students";
+import Group from "./components/Group/group";
+import Subject from "./components/Subject/subject";
+import Teacher from "./components/Teacher/teacher";
+import CreateTeacherpage from "./components/Teacher/createTeacherpage";
+import CreateStudentpage from './components/Student/createStudent';
+import TeacherProfile from "./components/Teacher/teacherProfile";
+import EditTeacherPage from "./components/Teacher/editTeacherPage";
+import StudentProfile from "./components/Student/studentProfile";
+import EditStudentPage from "./components/Student/editStudentPage";
+import CreateGroup from "./components/Group/createGroup";
+import EditGroup from "./components/Group/editGroup";
 
 
 export const Mycontext = createContext();

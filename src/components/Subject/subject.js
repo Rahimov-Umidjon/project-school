@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
-import {Mycontext} from "../App";
+import {Mycontext} from "../../App";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 

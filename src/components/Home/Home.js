@@ -1,10 +1,10 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import {useNavigate} from "react-router-dom";
-import {Mycontext} from "../App";
-import Teacher from "./teacher";
-import Group from "./group";
-import Students from "./Students";
-import Subject from "./subject";
+import {Mycontext} from "../../App";
+// import Teacher from "../Teacher/teacher";
+// import Group from "../Group/group";
+// import Students from "../Student/Students";
+// import Subject from "../Subject/subject";
 
 function Home(props) {
 

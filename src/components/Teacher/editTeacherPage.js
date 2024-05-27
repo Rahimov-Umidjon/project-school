@@ -1,34 +1,35 @@
 import React, {useContext} from 'react';
+import {Mycontext} from "../../App";
 import {useNavigate} from "react-router-dom";
-import {Mycontext} from "../App";
 
+function EditTeacherPage(props) {
 
-function CreateTeacherpage(props) {
-
- 
+    let value = useContext(Mycontext);
     const navigate = useNavigate();
 
-    let value = useContext(Mycontext)
+
+    
+
+    function EditTeacher() {
 
 
 
-    function addArryTeacher(){
 
-    let obj = {
-        firstname :   value.teacherFirstName,
-        middleName :  value.teacherMiddleName,
-        lastname :    value.teacherLastName,
-        phone :       value.teacherPhone,
-        sciences :    value.teacherSciences,
-        status :      value.teacherStatus,
-        group :       value.teacherGroups,
-        begdata :     value.teacherBeginingDate,
-        finData :     value.teacherFinishingDate        
-    }
+        let obj = value.arryTeacher[value.teacherProfileIndex]
+        obj['firstname'] =   value.teacherFirstName;
+        obj['middleName'] =  value.teacherMiddleName;
+        obj['lastname'] =    value.teacherLastName;
+        obj['phone'] =       value.teacherPhone;
+        obj['sciences'] =    value.teacherSciences;
+        obj['status'] =      value.teacherStatus;
+        obj['group'] =       value.teacherGroups;
+        obj['begdata'] =     value.teacherBeginingDate;
+        obj['finData'] =     value.teacherFinishingDate;
 
-        value.arryTeacher.push(obj);
 
-   
+
+
+
         value.setTeacherFirstName('')
         value.setTeacherMiddleName('')
         value.setTeacherLastName('')
@@ -40,40 +41,44 @@ function CreateTeacherpage(props) {
         value.setTeacherBeginingDate('')
 
 
-            navigate('/teacher')
+        console.log(value.arryTeacher)
+        navigate('/teacher-profile')
     }
 
+
+
+
+
+
+
     return (
-        <div id="create-teacher-page">
+        <div id="edit-teacher-page">
             <div className="navbar-teacher">
                 Create techer
             </div>
             <div className="row">
-                <div className="col-4"><input id='firstname' onChange={(e)=> {
+                <div className="col-4"><input id='edit-firstname' onChange={(e) => {
                     value.setTeacherFirstName(e.target.value)
-                    // document.getElementById(`${e.target.id}`).focus()
-                    // console.log(e.target.id)
-                   
-                    // console.log(value.teacherFirstName)
-                }} className={'form-control'} placeholder={'Fristname'} type={"text"}/></div>
-                <div className="col-4"><input onChange={(e)=> {
+                    console.log(value.arryTeacher[value.teacherProfileIndex].firstname)
+                }} className={'form-control'} placeholder={value.arryTeacher[value.teacherProfileIndex].firstname} type={"text"}/></div>
+                <div className="col-4"><input onChange={(e) => {
                     value.setTeacherMiddleName(e.target.value)
                     // console.log(value.teacherMiddleName)
-                }}   className={'form-control '} placeholder={'Middle name'} type={"text"}/></div>
-                <div className="col-4"><input onChange={(e)=> {
+                }} className={'form-control '} placeholder={value.arryTeacher[value.teacherProfileIndex].middleName} type={"text"}/></div>
+                <div className="col-4"><input onChange={(e) => {
                     value.setTeacherLastName(e.target.value)
                     // console.log(value.teacherLastName)
-                    
-                }} className={'form-control'} placeholder={'Last name'} type={"text"}/></div>
-                <div className="col-4"><input onChange={(e)=> {
+
+                }} className={'form-control'} placeholder={value.arryTeacher[value.teacherProfileIndex].lastname} type={"text"}/></div>
+                <div className="col-4"><input onChange={(e) => {
                     value.setTeacherPhone(e.target.value)
                     // console.log(value.teacherPhone)
-                }} className={'form-control'} placeholder={'Phone Number'} type={"text"}/></div>
+                }} className={'form-control'} placeholder={value.arryTeacher[value.teacherProfileIndex].phone} type={"text"}/></div>
                 <div className="col-4">
-                    <select onChange={(e)=>{
+                    <select onChange={(e) => {
                         value.setTeacherSciences(e.target.value)
                         // console.log(value.teacherSciences)
-                    }} className={'form-control'} aria-placeholder={'ass'} >
+                    }} className={'form-control'} >
                         <option></option>
                         <option>Sciences</option>
                         <option>w</option>
@@ -133,18 +138,18 @@ function CreateTeacherpage(props) {
             </div>
 
             <div className="create-btn">
-                <button onClick={()=>{
-                    navigate('/teacher')
-                }}  type={"button"}>Exit</button>
-                <button onClick={()=>{
-                    // value.createTeacher()
-                    addArryTeacher()
-                    
-                }}  type={"button"}>Create</button>
+                <button onClick={() => {
+                    navigate('/teacher-profile')
+                }} type={"button"}>Exit
+                </button>
+                <button onClick={() => {
+                   EditTeacher()
+                }} type={"button"}>Create
+                </button>
             </div>
 
         </div>
     );
 }
 
-export default CreateTeacherpage;
+export default EditTeacherPage;

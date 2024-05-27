@@ -1,6 +1,6 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext} from 'react';
 import {useNavigate} from "react-router-dom";
-import {Mycontext} from "../App";
+import {Mycontext} from "../../App";
 
 function Students(props) {
     const navigate = useNavigate();

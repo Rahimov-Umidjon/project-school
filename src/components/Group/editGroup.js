@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {Mycontext} from "../App";
+import {Mycontext} from "../../App";
 import {useNavigate} from "react-router-dom";
 
 function EditGroup(props) {
